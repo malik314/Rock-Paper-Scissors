@@ -4,11 +4,6 @@ function getComputerChoice() {
     return options[rand];
 }
 
-function getPlayerChoice(options) {
-    options = prompt("Enter a choice: Rock, Paper, or Scissors");
-    return options;
-}
-
 function round(playerSelection, computerSelection) {
     console.log('Player Choice: ', playerSelection);
     console.log('Computer Choice: ', computerSelection);
@@ -35,7 +30,10 @@ function round(playerSelection, computerSelection) {
         console.log('Tie!');
     }
 }
-
-let player = getPlayerChoice();
-let ai = getComputerChoice();
-round(player, ai);
+let opt = document.querySelectorAll('.options');
+opt.forEach((option) => {
+    option.addEventListener("click", function() {
+        const input = this.textContent;
+        round(input, getComputerChoice())
+    })
+})
