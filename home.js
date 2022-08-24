@@ -29,11 +29,14 @@ function round(playerSelection, computerSelection) {
     else if (playerSelection === computerSelection ) {
         console.log('Tie!');
     }
+
 }
+
 let opt = document.querySelectorAll('.options');
 opt.forEach((option) => {
     option.addEventListener("click", function() {
-        const input = this.textContent;
+        const input = this.id;
+        document.getElementById('ai').innerHTML = 'The computer chose ' + getComputerChoice() + '!';
         round(input, getComputerChoice())
     })
 })
