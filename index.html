@@ -4,16 +4,44 @@
         <title>Rock Paper Scissors Shoot!</title>
     </head>
     <style>
+        img { width: 50px; height: 50px; background: url(rock.png)}
         body { background-color: brown;}
+        body { text-align: center;}
+        .animateText { 
+            animation-duration: 2s;
+            animation-name: slidein;
+        }
+        
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+        button {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+        }
+
     </style>
     <body>
         <header>
-            <h1>
+            <h1 class="animateText">
                 Rock Paper Scissors
             </h1>
         </header>
-        <h2>Pick an option!</h2>
-        <button class="options">Rock</button>
+        <h2 class="animateText">Pick an option!</h2>
+        <button class="options" id="Rock">Rock</button>
         <button class="options">Paper</button>
         <button class="options">Scissors</button>
         <script src="home.js"></script>
